@@ -18,7 +18,7 @@ jobs:
         with:
           channel: 'stable' # or: 'beta', 'dev', 'master' (or 'main')
       - run: flutter --version
-      - run: flutter build ipa --build-name=1.0.${{github.run_number}} --build-number=${{github.run_number}} --no-codesign --output-path=build/ios/ipa/app-release.ipa
+      - run: flutter build ipa --build-name=1.0.${{github.run_number}} --build-number=${{github.run_number}} --no-codesign --output=build/ios/ipa/app-release.ipa
         name: Building application
       - name: Показать содержимое текущего каталога
         run: ls
