@@ -9,6 +9,10 @@ jobs:
   build_ios:
     runs-on: macos-latest
     steps:
+      - name: Install Xcode
+        uses: actions/setup-xcode@v2
+        with:
+          xcode-version: 'latest'
       - uses: actions/checkout@v3
         name: Downloading sources
       - uses: subosito/flutter-action@v2
