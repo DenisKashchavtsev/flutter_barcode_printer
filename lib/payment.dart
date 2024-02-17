@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_barcode_gun_and_camera_printer/print_page.dart';
 import 'package:intl/intl.dart';
-import 'package:web_view/print_page.dart';
 
 class Payment extends StatelessWidget {
   final List<Map<String, dynamic>> data = [

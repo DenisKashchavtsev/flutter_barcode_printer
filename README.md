@@ -1,4 +1,4 @@
-# web_view
+# flutter_barcode_gun_and_camera_printer
 
 A new Flutter project.
 

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:web_view/barcode.dart';
-import 'package:web_view/payment.dart';
-import 'package:web_view/print_page.dart';
+import 'package:flutter_barcode_gun_and_camera_printer/payment.dart';
 
+import 'barcode.dart';
 import 'barcode_gun.dart';
 
 class HomePage extends StatelessWidget {
