@@ -73,18 +73,6 @@ jobs:
         name: Downloading sources
       - uses: subosito/flutter-action@v2.8.0
       - run: |
-#          ./generate_ios_plist.sh
-#          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-#          cp ios/FlutterBigTour.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
-#
-#          security create-keychain -p "" flutter-build.keychain
-#          security import ios/imagevideo.p12 -t agg -k ~/Library/Keychains/flutter-build.keychain -P "${{ secrets.CERTIFICATE_PASSWORD }}" -A
-#
-#          security list-keychains -s ~/Library/Keychains/flutter-build.keychain
-#          security default-keychain -s ~/Library/Keychains/flutter-build.keychain
-#          security unlock-keychain -p "" ~/Library/Keychains/flutter-build.keychain
-#          security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/flutter-build.keychain
-#
           flutter build ipa --build-name=1.0.${{github.run_number}} --build-number=${{github.run_number}} --export-options-plist=ios/app-ios-export.plist
         name: Building application
       - uses: actions/upload-artifact@v3
