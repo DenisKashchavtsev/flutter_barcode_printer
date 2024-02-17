@@ -18,14 +18,20 @@ jobs:
         with:
           channel: 'stable' # or: 'beta', 'dev', 'master' (or 'main')
       - run: flutter --version
-      - run: flutter build ipa --build-name=1.0.${{github.run_number}} --build-number=${{github.run_number}} --no-codesign
+      - run: flutter build ipa --build-name=1.0.${{github.run_number}} --build-number=${{github.run_number}} --no-codesign --output-path=build/ios/ipa/app-release.ipa
         name: Building application
+      - name: Показать содержимое текущего каталога
+        run: ls
+      - name: Показать содержимое каталога
+        run: ls build/ios/ipa/
+      - name: Показать path
+        run: pwd
       - uses: actions/upload-artifact@v3
-        name: Archive production artifacts
+        name: Archive production artifacts\
         with:
           name: ios-app-1.0.${{github.run_number}}-${{github.sha}}
           path: |
-            build/ios/ipa/flutter_barcode_printer.ipa
+            build/ios/ipa/app-release.ipa
           retention-days: 1
 
   dummy_job:
